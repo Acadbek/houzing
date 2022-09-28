@@ -1,18 +1,31 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
-import { Container, Logo, Section, Wrapper } from "./style";
-
-import logoImg from "../../assets/icons/logo.svg";
-
+import { Outlet, useNavigate } from "react-router-dom";
+import { Container, Link, Logo, Section, Wrapper } from "./style";
+import { navbar } from "../../utils/navbar";
 const Navbar = () => {
+  const navigate = useNavigate();
   return (
     <Container>
       <Wrapper>
-        <Section>
-          <Logo src={logoImg} />
+        <Section onClick={() => navigate("/home")} logo>
+          <Logo /> <h2>Houzing</h2>
         </Section>
-        <Section>1</Section>
-        <Section>1</Section>
+        <Section>
+          {navbar.map(({ title, path, id }) => {
+            return (
+              <Link
+                className={({ isActive }) => isActive && "active"}
+                key={id}
+                to={path}
+              >
+                {title}
+              </Link>
+            );
+          })}
+        </Section>
+        <Section>
+          <button>sing in</button>
+        </Section>
       </Wrapper>
       <Outlet />
     </Container>
