@@ -1,10 +1,10 @@
-// import useUniqueID from "../hooks/useID";
+import useID from "../hooks/useID";
 import HomePage from "../pages/Home";
 import PropertiesPage from "../pages/Properties";
 
 export const navbar = [
   {
-    id: 1,
+    id: useID,
     element: <HomePage />,
     title: "Home",
     path: "/home",
@@ -12,7 +12,7 @@ export const navbar = [
     hidden: false,
   },
   {
-    id: 2,
+    id: useID,
     element: <PropertiesPage />,
     title: "Properties",
     path: "/properties",

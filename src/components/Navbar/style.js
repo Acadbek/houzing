@@ -1,9 +1,14 @@
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { ReactComponent as logoImg } from "../../assets/icons/logo.svg";
-const Container = styled.div``;
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`;
 
 const Wrapper = styled.div`
+  max-width: 1440px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -19,7 +24,7 @@ const Section = styled.div`
   align-items: center;
   cursor: ${({ logo }) => logo && "pointer"};
   .active {
-    color: #008DD5;
+    color: #008dd5;
   }
 `;
 

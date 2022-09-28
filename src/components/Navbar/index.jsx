@@ -11,11 +11,11 @@ const Navbar = () => {
           <Logo /> <h2>Houzing</h2>
         </Section>
         <Section>
-          {navbar.map(({ title, path, id }) => {
+          {navbar.map(({ title, path }, index) => {
             return (
               <Link
                 className={({ isActive }) => isActive && "active"}
-                key={id}
+                key={index}
                 to={path}
               >
                 {title}
