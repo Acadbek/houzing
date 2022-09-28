@@ -1,2 +1,3 @@
-import Properties from "../../components/Home";
-export const PropertiesPage = () => <Properties />;
+import Properties from "../../components/Properties";
+const PropertiesPage = () => <Properties />;
+export default PropertiesPage;

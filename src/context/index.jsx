@@ -1,13 +1,13 @@
-import { createContext } from "react";
+import { Fragment } from "react";
 import PropertiesProvider from "./properties";
 
-const Root = createContext();
+// const Root = createContext();
 
 const RootContext = ({ children }) => {
   return (
-    <PropertiesProvider>
-      <Root.Provider value={"hello"}>{children}</Root.Provider>
-    </PropertiesProvider>
+    <Fragment>
+      <PropertiesProvider>{children}</PropertiesProvider>
+    </Fragment>
   );
 };
 
