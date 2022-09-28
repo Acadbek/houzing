@@ -33,6 +33,9 @@ const Section = styled.div`
   .active {
     color: #008dd5;
   }
+  & h2 {
+    color: white;
+  }
 `;
 
 const Logo = styled(logoImg)`

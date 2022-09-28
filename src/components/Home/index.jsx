@@ -1,5 +1,4 @@
 import React from "react";
-import { Input } from "../Generic";
 
 const Home = () => {
   return (
