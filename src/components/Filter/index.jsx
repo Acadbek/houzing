@@ -2,10 +2,12 @@ import React, { useRef } from "react";
 import { Container, Icons, MenuWrapper, Section } from "./style";
 import { Button, Input } from "../Generic";
 import { Dropdown } from "antd";
-import { useReplace } from "../../hooks/useReplace";
+import { uzeReplace } from "../../hooks/useReplace";
 import { useNavigate } from "react-router-dom";
 
 const Filter = () => {
+  const navigate = useNavigate();
+
   const roomsRef = useRef();
   const sizeRef = useRef();
   const sortRef = useRef();
@@ -18,9 +20,8 @@ const Filter = () => {
 
   const onChange = ({ target: { name, value } }) => {
     console.log(name, value);
+    navigate(`/${uzeReplace(name, value)}`);
   };
-
-  const navigate = useNavigate()
 
   const menu = (
     <MenuWrapper>
@@ -68,7 +69,7 @@ const Filter = () => {
       </Section>
     </MenuWrapper>
   );
-  console.log(useReplace("address", "toshkent"));
+  console.log(uzeReplace("address", "toshkent"));
   return (
     <Container>
       <Input
