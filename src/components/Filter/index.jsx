@@ -2,6 +2,8 @@ import React, { useRef } from "react";
 import { Container, Icons, MenuWrapper, Section } from "./style";
 import { Button, Input } from "../Generic";
 import { Dropdown } from "antd";
+import { useReplace } from "../../hooks/useReplace";
+import { useNavigate } from "react-router-dom";
 
 const Filter = () => {
   const roomsRef = useRef();
@@ -14,33 +16,39 @@ const Filter = () => {
   const cityRef = useRef();
   const zipRef = useRef();
 
+  const onChange = ({ target: { name, value } }) => {
+    console.log(name, value);
+  };
+
+  const navigate = useNavigate()
+
   const menu = (
     <MenuWrapper>
       <h1 className="subTitle">Address</h1>
       <Section>
         <Input
           // defaultValue={query.get("country")}
-          // onChange={onChange}
+          onChange={onChange}
           ref={countryRef}
           name="country"
           placeholder="Country"
         />
         <Input
-          // // onChange={onChange}
+          onChange={onChange}
           // defaultValue={query.get("region")}
           ref={regionRef}
           name="region"
           placeholder="Region"
         />
         <Input
-          // // onChange={onChange}
+          onChange={onChange}
           // defaultValue={query.get("city")}
           ref={cityRef}
           name="city"
           placeholder="City"
         />
         <Input
-          // // onChange={onChange}
+          onChange={onChange}
           // defaultValue={query.get("zip_code")}
           name="zip_code"
           ref={zipRef}
@@ -60,13 +68,14 @@ const Filter = () => {
       </Section>
     </MenuWrapper>
   );
+  console.log(useReplace("address", "toshkent"));
   return (
     <Container>
       <Input
         icon={<Icons.Houses />}
         placeholder={"Enter an address, neighborhood, city, or ZIP code"}
       />
-      <Dropdown overlay={menu} placement="bottomRight" arrow>
+      <Dropdown trigger={"click"} overlay={menu} placement="bottomRight" arrow>
         <div>
           <Button type={"light"}>
             <Icons.Filter /> Advanced

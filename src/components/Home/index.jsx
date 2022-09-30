@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <Container>
       <Carousel />
-      <HouseCard />
+      {/* <HouseCard /> */}
     </Container>
   );
 };

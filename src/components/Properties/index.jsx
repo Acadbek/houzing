@@ -10,7 +10,7 @@ const Properties = () => {
     fetch(`${url}/houses/list`)
       .then((res) => res.json())
       .then((res) => {
-        console.log(res, "res");
+        // console.log(res, "res");
         setData(res?.data);
       });
   }, [url]);
