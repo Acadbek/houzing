@@ -1,47 +1,53 @@
 import { Container, Content, Details, Img, Icons, Divider } from "./style";
-import noimg from "../../../assets/img/noimg.jpeg";
+import noPhoto from "../../../assets/img/noimg.jpeg";
 
-const HouseCard = ({
-  url,
-  bed,
-  info,
-  bath,
-  ruler,
-  price,
-  title,
-  garage,
-  subPrice,
-}) => {
+const HouseCard = ({ data }) => {
+  const {
+    address,
+    city,
+    country,
+    description,
+    houseDetails,
+    price,
+    salePrice,
+    attachments,
+  } = data;
+
+  console.log(data, "data");
+
   return (
     <Container>
-      <Img src={url || noimg} />
+      <Img src={attachments[0].imgPath || noPhoto} />
       <Content>
-        <div className="subTitle">{title || "New Apartment Nice View"}</div>
-        <div className="info">{info || "Quincy ST, Brooklyn, NY, USA"}</div>
+        <div className="subTitle">
+          {city.substring(0, 10)}, {country.substring(0, 10)},{" "}
+          {description.substring(0, 10) + "..."}
+        </div>
+        <div className="info">{address || "Quincy ST, Brooklyn, NY, USA"}</div>
         <Details>
           <Details.Item>
             <Icons.Bed />
-            <div className="info">Bed {bed || 0}</div>
+            <div className="info">Bed {houseDetails?.bed || 0}</div>
           </Details.Item>
           <Details.Item>
             <Icons.Bath />
-            <div className="info">Bath {bath || 0}</div>
+            <div className="info">Bath {houseDetails?.bath || 0}</div>
           </Details.Item>
           <Details.Item>
             <Icons.Garage />
-            <div className="info">Garage {garage || 0}</div>
+            <div className="info">Garage {houseDetails?.garage || 0}</div>
           </Details.Item>
           <Details.Item>
             <Icons.Ruler />
-            <div className="info">Ruler {ruler || 0}</div>
+            <div className="info">Ruler {houseDetails?.area || 0}kv</div>
           </Details.Item>
         </Details>
       </Content>
       <Divider />
       <Content footer>
         <Details.Item footer>
-          <div className="info">{price || "$2.500"}</div>
-          <div className="subTitle">{subPrice || "$2.800"}</div>
+          <div className="info">${price || "0"} / mo</div>
+          <div className="subTitle">${salePrice || "0"} / mo</div>
         </Details.Item>
         <Details.Item row>
           <Icons.Resize />
