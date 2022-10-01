@@ -1,7 +1,7 @@
 import { Container, Content, Details, Img, Icons, Divider } from "./style";
 import noPhoto from "../../../assets/img/noimg.jpeg";
 
-const HouseCard = ({ data }) => {
+const HouseCard = ({ data = {} }) => {
   const {
     address,
     city,
@@ -17,7 +17,7 @@ const HouseCard = ({ data }) => {
 
   return (
     <Container>
-      <Img src={attachments[0].imgPath || noPhoto} />
+      <Img src={(attachments && attachments[0]?.imgPath) || noPhoto} />
       <Content>
         <div className="subTitle">
           {city.substring(0, 10)}, {country.substring(0, 10)},{" "}

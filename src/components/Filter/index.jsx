@@ -3,11 +3,18 @@ import { Container, Icons, MenuWrapper, Section } from "./style";
 import { Button, Input } from "../Generic";
 import { Dropdown } from "antd";
 import { uzeReplace } from "../../hooks/useReplace";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import useSearch from "../../hooks/useSearch";
 
 const Filter = () => {
+  // hooks
   const navigate = useNavigate();
+  const location = useLocation();
+  const params = useParams();
+  const query = useSearch();
 
+  // variables
   const roomsRef = useRef();
   const sizeRef = useRef();
   const sortRef = useRef();
@@ -18,9 +25,11 @@ const Filter = () => {
   const cityRef = useRef();
   const zipRef = useRef();
 
+  console.log(query.get("country"));
+
   const onChange = ({ target: { name, value } }) => {
-    console.log(name, value);
-    navigate(`/${uzeReplace(name, value)}`);
+    console.log(params, "params");
+    navigate(`${location?.pathname}${uzeReplace(name, value)}`);
   };
 
   const menu = (
@@ -28,7 +37,7 @@ const Filter = () => {
       <h1 className="subTitle">Address</h1>
       <Section>
         <Input
-          // defaultValue={query.get("country")}
+          defaultValue={query.get("country")}
           onChange={onChange}
           ref={countryRef}
           name="country"
@@ -36,21 +45,21 @@ const Filter = () => {
         />
         <Input
           onChange={onChange}
-          // defaultValue={query.get("region")}
+          defaultValue={query.get("region")}
           ref={regionRef}
           name="region"
           placeholder="Region"
         />
         <Input
+          defaultValue={query.get("city")}
           onChange={onChange}
-          // defaultValue={query.get("city")}
           ref={cityRef}
           name="city"
           placeholder="City"
         />
         <Input
           onChange={onChange}
-          // defaultValue={query.get("zip_code")}
+          defaultValue={query.get("zip_code")}
           name="zip_code"
           ref={zipRef}
           placeholder="Zip Code"
@@ -69,7 +78,7 @@ const Filter = () => {
       </Section>
     </MenuWrapper>
   );
-  console.log(uzeReplace("address", "toshkent"));
+  // console.log(uzeReplace("address", "toshkent"));
   return (
     <Container>
       <Input
