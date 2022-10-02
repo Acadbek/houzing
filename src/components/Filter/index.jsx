@@ -28,6 +28,7 @@ const Filter = () => {
   console.log(query.get("country"));
 
   const onChange = ({ target: { name, value } }) => {
+    // console.log(name, value);
     console.log(params, "params");
     navigate(`${location?.pathname}${uzeReplace(name, value)}`);
   };

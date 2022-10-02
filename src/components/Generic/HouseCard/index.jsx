@@ -20,8 +20,8 @@ const HouseCard = ({ data = {} }) => {
       <Img src={(attachments && attachments[0]?.imgPath) || noPhoto} />
       <Content>
         <div className="subTitle">
-          {city.substring(0, 10)}, {country.substring(0, 10)},{" "}
-          {description.substring(0, 10) + "..."}
+          {city?.substring(0, 10)}, {country?.substring(0, 10)},{" "}
+          {description?.substring(0, 10) + "..."}
         </div>
         <div className="info">{address || "Quincy ST, Brooklyn, NY, USA"}</div>
         <Details>
