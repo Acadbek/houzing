@@ -79,7 +79,6 @@ const Filter = () => {
       </Section>
     </MenuWrapper>
   );
-  // console.log(uzeReplace("address", "toshkent"));
   return (
     <Container>
       <Input
