@@ -11,6 +11,7 @@ const HouseCard = ({ data = {} }) => {
     price,
     salePrice,
     attachments,
+    category,
   } = data;
 
   // console.log(data, "data");
@@ -21,9 +22,12 @@ const HouseCard = ({ data = {} }) => {
       <Content>
         <div className="subTitle">
           {city?.substring(0, 10)}, {country?.substring(0, 10)},{" "}
-          {description?.substring(0, 10) + "..."}
+          {description?.substring(0, 10) + "..."} -{" "}
         </div>
-        <div className="info">{address || "Quincy ST, Brooklyn, NY, USA"}</div>
+        <div className="info">
+          {address || "Quincy ST, Brooklyn, NY, USA"} -{" "}
+          {category?.name || "No Category"}
+        </div>
         <Details>
           <Details.Item>
             <Icons.Bed />

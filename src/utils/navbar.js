@@ -1,11 +1,16 @@
+import React, { lazy, Suspense } from "react";
 import useID from "../hooks/useID";
-import HomePage from "../pages/Home";
-import PropertiesPage from "../pages/Properties";
+const PropertiesPage = lazy(() => import("../pages/Properties"));
+const HomePage = lazy(() => import("../pages/Home"));
 
 export const navbar = [
   {
     id: useID,
-    element: <HomePage />,
+    element: (
+      <Suspense fallback={<h1 style={{ textAlign: "center" }}>Loading...</h1>}>
+        <HomePage />
+      </Suspense>
+    ),
     title: "Home",
     path: "/home",
     private: false,
@@ -13,7 +18,11 @@ export const navbar = [
   },
   {
     id: useID,
-    element: <PropertiesPage />,
+    element: (
+      <Suspense fallback={<h1 style={{ textAlign: "center" }}>Loading...</h1>}>
+        <PropertiesPage />,
+      </Suspense>
+    ),
     title: "Properties",
     path: "/properties",
     private: false,
