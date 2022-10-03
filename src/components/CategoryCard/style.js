@@ -10,6 +10,7 @@ const Container = styled.div`
   min-width: 230px;
   max-height: 380px;
   min-height: 350px;
+  cursor: pointer;
 `;
 
 const Blur = styled.div`

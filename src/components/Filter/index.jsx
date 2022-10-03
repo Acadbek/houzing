@@ -8,7 +8,6 @@ import { useParams } from "react-router-dom";
 import useSearch from "../../hooks/useSearch";
 
 const Filter = () => {
-  // hooks
   const navigate = useNavigate();
   const location = useLocation();
   const params = useParams();

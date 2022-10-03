@@ -1,12 +1,12 @@
 import { Blur, Container, Content, Img } from "./style";
 import noimg from "../../assets/img/noimg.png";
 
-const CategoryCard = ({ data = [] }) => {
+const CategoryCard = ({ data = [], onClick }) => {
   const { name } = data;
   return (
-    <Container>
-      <Img src={noimg} />
+    <Container onClick={onClick}>
       <Blur />
+      <Img src={noimg} />
       <Content>{name || "empty"}</Content>
     </Container>
   );
