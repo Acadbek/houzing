@@ -1,25 +1,28 @@
 import React from "react";
 import Slider from "react-slick";
-import CategoryCard from "../CategoryCard";
+import HouseCard from "../Generic/HouseCard";
 import { useState } from "react";
-import { Container, Wrapper } from "./style";
+import { Container, Content, Wrapper } from "./style";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const { REACT_APP_BASE_URL: url } = process.env;
 
-const Category = () => {
+const Recommended = () => {
   const settings = {
     dots: true,
     arrows: true,
     autoplay: true,
+    infinity: true,
+    className: "center",
+    centerMode: true,
     slidesToShow: 3,
   };
   const [data, setData] = useState([]);
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`${url}/categories/list`)
+    fetch(`${url}/houses/list`)
       .then((response) => response.json())
       .then((response) => setData(response?.data || []));
   }, []);
@@ -27,13 +30,21 @@ const Category = () => {
   return (
     <Wrapper>
       <Container>
+        <Content>
+          <h2 className="title">Recommended</h2>
+          <p className="info">
+            Located in a small village in Surrey in the United Kingdom, Updown
+            Court is the most beautiful house.
+          </p>
+        </Content>
         <Slider {...settings}>
           {data.map((value) => {
             return (
-              <CategoryCard
+              <HouseCard
+                gap={20}
                 data={value}
-                key={value.id}
-                onClick={() => navigate(`/properties?category_id=${value.id}`)}
+                key={value?.id}
+                onClick={() => navigate(`/properties?category_id=${value?.id}`)}
               />
             );
           })}
@@ -43,4 +54,4 @@ const Category = () => {
   );
 };
 
-export default Category;
+export default Recommended;

@@ -5,6 +5,7 @@ const Wrapper = styled.div`
   max-width: 1440px;
   width: 100%;
   margin: auto;
+  /* margin-top: 95px; */
 `;
 
 const Container = styled.div`
@@ -22,4 +23,12 @@ const Container = styled.div`
     color: black;
   }
 `;
-export { Container, Wrapper };
+
+const Content = styled.div`
+  margin-bottom: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+`;
+export { Container, Wrapper, Content };

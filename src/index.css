@@ -8,7 +8,6 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  
 }
 
 :root {
@@ -46,17 +45,11 @@ body {
 }
 
 .info {
-  /* Paragraph/Small/Regular */
-
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
-  /* identical to box height, or 143% */
-
-  /* Text / Color */
-
   color: #696969;
 }
 
@@ -64,4 +57,8 @@ body {
   display: flex;
   overflow: hidden;
   white-space: nowrap;
+}
+
+.slick-dots-bottom {
+  width: inherit !important;
 }

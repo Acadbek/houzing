@@ -10,10 +10,14 @@ const Container = styled.div`
   width: 100%;
   max-width: 380px;
   min-width: 330px;
-  height: 430px;
-  filter: drop-shadow(0px 20px 38px rgba(0, 0, 0, 0.06))
-    drop-shadow(0px 7px 46px rgba(0, 0, 0, 0.06))
-    drop-shadow(0px 8px 15px rgba(0, 0, 0, 0.06));
+  margin: ${({ gap }) => gap && `0 ${gap}px`};
+  cursor: pointer;
+  :hover {
+    filter: drop-shadow(0px 20px 38px rgba(0, 0, 0, 0.06))
+      drop-shadow(0px 7px 46px rgba(0, 0, 0, 0.06))
+      drop-shadow(0px 8px 15px rgba(0, 0, 0, 0.06));
+  }
+  border: 1px solid #e5e9ec;
 `;
 
 const Img = styled.img`
