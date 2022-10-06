@@ -32,7 +32,7 @@ const Category = () => {
             <CategoryCard
               data={value}
               key={value.id}
-              onClick={() => navigate(`/properties?category=${value.id}`)}
+              onClick={() => navigate(`/properties?category_id=${value.id}`)}
             />
           );
         })}

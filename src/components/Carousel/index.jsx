@@ -3,6 +3,7 @@ import { Carousel } from "antd";
 import { Arrow, Blur, Container, Content, Img } from "./style";
 import img1 from "../../assets/img/house1.png";
 import img2 from "../../assets/img/house2.png";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const GenCarousel = () => {
   const slider = useRef();
@@ -20,8 +21,8 @@ const GenCarousel = () => {
     <Container>
       <Arrow data-name="right" onClick={onMove} left="true" />
       <Carousel ref={slider}>
-        <Img src={img1} />
-        <Img src={img2} />
+        <LazyLoadImage src={img1} effect="blur" />
+        <LazyLoadImage src={img2} effect="blur" />
       </Carousel>
       <Blur />
       <Content>
