@@ -3,18 +3,12 @@ import { ReactComponent as message } from "../../assets/icons/cardMassage.svg";
 import { ReactComponent as map } from "../../assets/icons/cardMaps.svg";
 import { ReactComponent as calc } from "../../assets/icons/calculator.svg";
 import { ReactComponent as house } from "../../assets/icons/cardHouse.svg";
-import { icons } from "antd/lib/image/PreviewGroup";
 
 const Wrapper = styled.div`
-  /* max-width: 1440px; */
-  /* width: 100%;
-  margin: auto; */
   background-color: #f5f7fc;
 `;
 
 const Container = styled.div`
-  /* max-width: 1440px; */
-
   width: 100%;
   padding: 96px 130px;
   @media (max-width: 599px) {

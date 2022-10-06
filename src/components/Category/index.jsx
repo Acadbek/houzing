@@ -27,6 +27,14 @@ const Category = () => {
   return (
     <Wrapper>
       <Container>
+        <h2 className="title">Why choose Us</h2>
+        <p
+          style={{ textAlign: "center", marginBottom: "32px" }}
+          className="info"
+        >
+          Located in a small village in Surrey in the United Kingdom, Updown
+          Court is the most beautiful house.
+        </p>
         <Slider {...settings}>
           {data.map((value) => {
             return (
