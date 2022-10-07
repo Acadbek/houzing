@@ -4,6 +4,8 @@ import Category from "../Category";
 import Container from "./style";
 import Recommended from "../Recommended";
 import Why from "../Why";
+import Recent from "../Recent";
+import Banner from "../Banner";
 
 const Home = () => {
   return (
@@ -12,6 +14,8 @@ const Home = () => {
       <Recommended />
       <Why />
       <Category />
+      <Recent />
+      <Banner />
     </Container>
   );
 };
