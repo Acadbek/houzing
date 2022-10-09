@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { ReactComponent as arrow } from "../../assets/icons/arrow.svg";
 
 const Container = styled.div`
   position: relative;
@@ -35,19 +34,11 @@ const Content = styled.div`
 Content.Title = styled.h1`
   color: white;
   font-style: normal;
-  font-weight: 700;
-  font-size: 44px;
-  line-height: 48px;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 35px;
   letter-spacing: -0.02em;
-`;
-
-Content.Desc = styled.div`
-  font-style: normal;
-  font-weight: 400;
-  line-height: 24px;
-  color: white;
-  font-size: 18px;
-  margin-bottom: 20px;
+  text-align: center;
 `;
 
 export { Container, Img, Blur, Content };
