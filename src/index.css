@@ -21,6 +21,9 @@ body {
 
   /* padding */
   --padding: 0 130px;
+  
+  /* main width */
+  --width: 1440px;
 }
 
 .title {

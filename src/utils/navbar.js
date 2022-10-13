@@ -1,7 +1,10 @@
 import React, { lazy, Suspense } from "react";
 import useID from "../hooks/useID";
+import SigninPage from "../pages/Signin";
+
 const PropertiesPage = lazy(() => import("../pages/Properties"));
 const HomePage = lazy(() => import("../pages/Home"));
+const HouseItemPage = lazy(() => import("../pages/HouseItem"));
 
 export const navbar = [
   {
@@ -30,9 +33,21 @@ export const navbar = [
   },
   {
     id: useID,
-    element: <h1>Sing in</h1>,
-    title: "Properties",
+    element: <SigninPage />,
+    title: "SigninPage",
     path: "/signin",
+    private: false,
+    hidden: true,
+  },
+  {
+    id: useID,
+    element: (
+      <Suspense fallback={<h1 style={{ textAlign: "center" }}>Loading...</h1>}>
+        <HouseItemPage />
+      </Suspense>
+    ),
+    title: "Properties's single page",
+    path: "/properties/:id",
     private: false,
     hidden: true,
   },

@@ -43,6 +43,9 @@ const Container = styled.input`
   border: 1px solid #e6e9ec;
   padding-left: ${({ icon }) => (icon ? "35px" : "20px")};
   /* ${getType} */
+  :focus {
+    border: solid 1px #0061df;
+  }
 `;
 
 const Wrapper = styled.div`

@@ -1,7 +1,7 @@
 import { Container, Content, Details, Img, Icons, Divider } from "./style";
 import noPhoto from "../../../assets/img/noimg.jpeg";
 
-const HouseCard = ({ data = {}, gap }) => {
+const HouseCard = ({ data = {}, gap, onClick }) => {
   const {
     address,
     city,
@@ -17,7 +17,7 @@ const HouseCard = ({ data = {}, gap }) => {
   // console.log(data, "data");
 
   return (
-    <div style={{ display: "flex" }}>
+    <div onClick={onClick} style={{ display: "flex" }}>
       <Container gap={gap}>
         <Img src={(attachments && attachments[0]?.imgPath) || noPhoto} />
         <Content>

@@ -1,0 +1,1 @@
+// properties slugda share icon
