@@ -1,26 +1,23 @@
-import React from "react";
-import { Blur, Container, Content } from "./style";
-import img1 from "../../assets/img/house1.png";
-// import { LazyLoadImage } from "react-lazy-load-image-component";
-import Button from "../Generic/Button";
+import { Blur, Container, Content, Img } from './style';
+import { Button } from '../Generic';
 
-const Banner = () => {
+import img1 from '../../assets/img/house1.png';
+
+export const GenCarousel = () => {
   return (
     <Container>
-      {/* <LazyLoadImage width={"100%"} src={img1} effect="blur" /> */}
-      <img src={img1} width={"100%"} alt="" />
+      <Img src={img1} />
       <Blur />
       <Content>
         <Content.Title>
-          Vermont Farmhouse With Antique Jail Is the Week's Most Popular Home{" "}
-          <br />
+          Vermont Farmhouse With Antique Jail Is the Week's Most Popular Home,
           the Week's Most Popular Home
         </Content.Title>
+
         <Button>Read More</Button>
       </Content>
-        
     </Container>
   );
 };
 
-export default Banner;
+export default GenCarousel;
