@@ -17,6 +17,7 @@ const Banner = () => {
         </Content.Title>
         <Button>Read More</Button>
       </Content>
+        
     </Container>
   );
 };
