@@ -11,10 +11,25 @@ import { ReactComponent as resize } from "../../assets/icons/resize.svg";
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  margin: auto;
-  padding: var(--padding);
+  flex: ${({ flex }) => flex};
+  ~ .user {
+    background-color: white;
+    border: 1px solid #e6e9ec;
+    margin-left: 20px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+`;
+
+const Wrapper = styled.div`
   max-width: var(--width);
+  padding: var(--padding);
   width: 100%;
+  margin: auto;
+  display: flex;
+  padding-bottom: 48px;
 `;
 
 const Section = styled.div`
@@ -120,4 +135,12 @@ const Description = styled.div`
   background: linear-gradient(180deg, rgb(255, 255, 255, 0) 0%, #ffffff 100%);
 `;
 
-export { Container, Content, Description, Section, Icon, Details };
+const User = styled.div``;
+User.Img = styled.img`
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  margin-right: 10px;
+`;
+
+export { Container, Content, Description, Section, Icon, Details, Wrapper, User };
