@@ -44,7 +44,7 @@ const Recent = () => {
                 gap={20}
                 data={value}
                 key={value?.id}
-                onClick={() => navigate(`/properties?category_id=${value?.id}`)}
+                onClick={() => navigate(`/properties/${value?.id}`)}
               />
             );
           })}
