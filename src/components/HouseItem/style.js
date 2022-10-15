@@ -1,25 +1,23 @@
 import styled from "styled-components";
-
-import { ReactComponent as share } from "../../assets/icons/bath.svg";
+import { ReactComponent as share } from "../../assets/icons/love.svg";
 import { ReactComponent as love } from "../../assets/icons/love.svg";
 import { ReactComponent as bed } from "../../assets/icons/bed.svg";
 import { ReactComponent as bath } from "../../assets/icons/bath.svg";
-import { ReactComponent as garage } from "../../assets/icons/love.svg";
+import { ReactComponent as garage } from "../../assets/icons/car.svg";
 import { ReactComponent as ruler } from "../../assets/icons/ruler.svg";
 import { ReactComponent as resize } from "../../assets/icons/resize.svg";
-
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   flex: ${({ flex }) => flex};
+  gap: ${({ gap }) => `${gap}px`};
   ~ .user {
-    background-color: white;
+    background: #ffff;
     border: 1px solid #e6e9ec;
+    border-radius: 3px;
     margin-left: 20px;
     padding: 24px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    gap: 24px;
   }
 `;
 
@@ -36,35 +34,19 @@ const Section = styled.div`
   display: flex;
   justify-content: space-between;
 `;
-
 const Content = styled.div`
   display: flex;
-  flex-direction: ${({ flex }) => !flex && "column"};
-  justify-content: ${({ flex }) => !flex && "center"};
   align-items: ${({ flex }) => flex && "center"};
-  align-items: center;
-`;
-
-const Details = styled.div`
-  display: flex;
-  align-items: center;
-  padding-top: 16px;
-  margin: 32px 0;
-`;
-
-Details.Title = styled.div`
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 20px;
-  color: #696969;
-  margin: 0 24px 0 8px;
+  justify-content: ${({ flex }) => !flex && "center"};
+  flex-direction: ${({ flex }) => !flex && "column"};
+  /* border: 1px solid red; */
 `;
 
 Content.Title = styled.div`
-  width: 100%;
+  font-family: "Montserrat";
+  font-style: normal;
   font-weight: 600;
-  font-size: ${({ desc }) => (desc ? "24px" : "18px")};
-  text-align: start;
+  font-size: ${({ large }) => (large ? "24px" : "18px")};
   line-height: 32px;
   letter-spacing: -0.02em;
   color: #0d263b;
@@ -72,75 +54,94 @@ Content.Title = styled.div`
   margin-bottom: ${({ mb }) => `${mb}px`};
 `;
 
-const Icon = styled.div``;
-
-Icon.Share = styled(share)`
+const Details = styled.div`
   display: flex;
-  padding: 2px;
-  background-color: #f6f8f9;
-  border-radius: 10px;
-  width: 35px;
-  height: 35px;
-  margin: 0 10px 0 25px;
-  cursor: pointer;
-  :active {
-    transform: scale(0.9);
-  }
-`;
-Icon.Love = styled(love)`
-  display: flex;
-  padding: 2px;
-  background-color: #f6f8f9;
-  border-radius: 10px;
-  width: 35px;
-  height: 35px;
-  margin: 0 10px 0 25px;
-  cursor: pointer;
-  :active {
-    transform: scale(0.9);
-  }
-`;
-Icon.Bed = styled(bed)``;
-Icon.Bath = styled(bath)``;
-Icon.Garage = styled(garage)``;
-Icon.Ruler = styled(ruler)``;
-Icon.Resize = styled(resize)`
-  cursor: pointer;
-`;
-Icon.Love = styled(love)`
-  width: 27px;
-  height: 27px;
-  padding: 6px;
-  background: #f6f8f9;
-  border-radius: 50%;
-  margin-left: 20px;
-  cursor: pointer;
-  :active {
-    transform: scale(0.9);
-  }
+  align-items: center;
+  margin: 32px 0;
 `;
 
-Icon.Title = styled.div`
+Details.Title = styled.div`
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
   font-size: 14px;
   line-height: 20px;
+  color: #696969;
+  margin: 0 24px 0 8px;
+`;
+
+const Icons = styled.div``;
+
+Icons.Share = styled(share)`
+  display: inline-block;
+  padding: 2px;
+  background: #f6f8f9;
+  border-radius: 10px;
+  width: 35px;
+  height: 35px;
+  margin: 0 10px 0 26px;
+  cursor: pointer;
+  :active {
+    transform: scale(0.9);
+  }
+`;
+Icons.Love = styled(love)`
+  display: inline-block;
+  padding: 2px;
+  background: #f6f8f9;
+  border-radius: 10px;
+  width: 35px;
+  height: 35px;
+  margin: 0 10px 0 26px;
+  cursor: pointer;
+  :active {
+    transform: scale(0.9);
+  }
+`;
+
+Icons.Title = styled.div`
+  font-family: "Montserrat";
+  font-style: normal;
   font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
   color: #696969;
 `;
+
+Icons.Bed = styled(bed)``;
+Icons.Bath = styled(bath)``;
+Icons.Garage = styled(garage)``;
+Icons.Ruler = styled(ruler)``;
+Icons.Resize = styled(resize)``;
 
 const Description = styled.div`
-  margin-top: 17px;
+  margin-top: 16px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
   font-size: 14px;
   line-height: 20px;
   color: #696969;
-  background: linear-gradient(180deg, rgb(255, 255, 255, 0) 0%, #ffffff 100%);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
+  margin-bottom: 48px;
 `;
 
 const User = styled.div``;
+
 User.Img = styled.img`
-  width: 55px;
-  height: 55px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
   margin-right: 10px;
 `;
 
-export { Container, Content, Description, Section, Icon, Details, Wrapper, User };
+export {
+  Container,
+  Wrapper,
+  Content,
+  Section,
+  Icons,
+  Details,
+  Description,
+  User,
+};
