@@ -1,5 +1,5 @@
 import React from "react";
-import Carousel from "../Carousel";
+import Carousel from "../Carousel/index.tsx";
 import Category from "../Category";
 import Container from "./style";
 import Recommended from "../Recommended";

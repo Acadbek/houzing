@@ -1,20 +1,20 @@
 import React, { useRef } from "react";
 import { Carousel } from "antd";
-import { Arrow, Blur, Container, Content, Img } from "./style";
-import img1 from "../../assets/img/house1.png";
-import img2 from "../../assets/img/house2.png";
-import { LazyLoadImage } from "react-lazy-load-image-component";
+import { Arrow, Blur, Container, Content } from "./style";
+const img1 = require("../../assets/img/house1.png");
+const img2 = require("../../assets/img/house2.png");
+var { LazyLoadImage } = require("react-lazy-load-image-component");
 
-const GenCarousel = () => {
-  const slider = useRef();
+const GenCarousel: React.FC = () => {
+  const slider = useRef() as any;
 
   const onMove = ({
     target: {
       dataset: { name },
     },
-  }) => {
-    if (name === "right") slider.current.next();
-    if (name === "left") slider.current.prev();
+  }): void => {
+    if (name === "right") slider.current?.next();
+    if (name === "left") slider.current?.prev();
   };
 
   return (
