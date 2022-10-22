@@ -1,9 +1,9 @@
-import { Blur, Container, Content, Img } from './style';
-import { Button } from '../Generic';
+import React from 'react';
+import { Blur, Container, Content, Img } from "./style";
+import { Button } from "../Generic";
+import img1 from "../../assets/img/house1.png";
 
-import img1 from '../../assets/img/house1.png';
-
-export const GenCarousel = () => {
+export const GenCarousel: React.FC = () => {
   return (
     <Container>
       <Img src={img1} />

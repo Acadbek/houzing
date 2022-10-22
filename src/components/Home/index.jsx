@@ -5,7 +5,7 @@ import Container from "./style";
 import Recommended from "../Recommended";
 import Why from "../Why";
 import Recent from "../Recent";
-import Banner from "../Banner";
+import Banner from "../Banner/index.tsx";
 
 const Home = () => {
   return (

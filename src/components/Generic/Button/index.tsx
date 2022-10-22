@@ -1,7 +1,23 @@
 import React from "react";
 import { Container } from "./style";
 
-const Button = ({ type, width, height, children, fontSize, onClick }) => {
+interface Props {
+  type?: string;
+  width?: string;
+  height?: string;
+  children?: React.ReactNode;
+  fontSize?: string;
+  onClick?: () => void;
+}
+
+const Button: React.FC<Props> = ({
+  type,
+  width,
+  height,
+  children,
+  fontSize,
+  onClick,
+}) => {
   return (
     <Container
       type={type}
