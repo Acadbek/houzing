@@ -5,17 +5,9 @@ import { navbar } from "../../utils/navbar";
 import { Button } from "../Generic";
 import Filter from "../Filter";
 import Footer from "../Footer";
-const Navbar = () => {
-  let token = localStorage.getItem("token");
 
-  const onClick = (e) => {
-    if (token) {
-      console.log(e);
-    } else {
-      console.log(e);
-      navigate("/signin");
-    }
-  };
+const Navbar: React.FC = () => {
+  let token: string = localStorage.getItem("token")!;
 
   const navigate = useNavigate();
   return (
