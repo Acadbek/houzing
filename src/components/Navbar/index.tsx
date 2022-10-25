@@ -1,12 +1,21 @@
 import React from "react";
 import { Outlet, useNavigate } from "react-router-dom";
-import { Container, Link, Logo, Main, Section, Wrapper } from "./style";
+import { Container, Link, Logo, Main, Menu, Section, Wrapper } from "./style";
 import { navbar } from "../../utils/navbar";
 import { Button } from "../Generic";
 import Filter from "../Filter";
 import Footer from "../Footer";
+import { Dropdown } from "antd";
 
 const Navbar: React.FC = () => {
+  const menu = (
+    <Menu>
+      <Menu.Item>HOME</Menu.Item>
+      <Menu.Item>asd</Menu.Item>
+      <Menu.Item>asdas</Menu.Item>
+    </Menu>
+  );
+
   let token: string = localStorage.getItem("token")!;
 
   const navigate = useNavigate();
@@ -35,9 +44,16 @@ const Navbar: React.FC = () => {
           <Section>
             {token ? (
               <>
-                <Button onClick={() => navigate("/")} type={"dark"}>
-                  Profile
-                </Button>
+                <Dropdown
+                  overlay={menu}
+                  placement="topRight"
+                  arrow={{ pointAtCenter: true }}
+                  trigger="click"
+                >
+                  <Button type={"dark"}>
+                    <div>Profile</div>
+                  </Button>
+                </Dropdown>
               </>
             ) : (
               <Button onClick={() => navigate("signin")} type={"dark"}>

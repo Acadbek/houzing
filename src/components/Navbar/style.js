@@ -52,4 +52,20 @@ const Link = styled(NavLink)`
   color: #ffff;
 `;
 
-export { Container, Wrapper, Section, Logo, Link, Main };
+const Menu = styled.div`
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 5px;
+`;
+Menu.Item = styled.div`
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--colorSecondary);
+  padding: 8px;
+  /* border-bottom: 1px solid var(--colorSecondary); */
+  cursor: pointer;
+`;
+
+export { Container, Wrapper, Section, Logo, Link, Main, Menu };
