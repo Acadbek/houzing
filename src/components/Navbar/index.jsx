@@ -6,6 +6,17 @@ import { Button } from "../Generic";
 import Filter from "../Filter";
 import Footer from "../Footer";
 const Navbar = () => {
+  let token = localStorage.getItem("token");
+
+  const onClick = (e) => {
+    if (token) {
+      console.log(e);
+    } else {
+      console.log(e);
+      navigate("/signin");
+    }
+  };
+
   const navigate = useNavigate();
   return (
     <Container>
@@ -30,9 +41,17 @@ const Navbar = () => {
             })}
           </Section>
           <Section>
-            <Button onClick={() => navigate("signin")} type={"dark"}>
-              Sign in
-            </Button>
+            {token ? (
+              <>
+                <Button onClick={() => navigate("/")} type={"dark"}>
+                  Profile
+                </Button>
+              </>
+            ) : (
+              <Button onClick={() => navigate("signin")} type={"dark"}>
+                Sign in
+              </Button>
+            )}
           </Section>
         </Wrapper>
       </Main>

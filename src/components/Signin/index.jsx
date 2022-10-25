@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import useRequest from "../../hooks/useRequest";
 import { Button, Input } from "../Generic";
 import { Container, Content } from "./style";
 import { message } from "antd";
@@ -11,10 +10,6 @@ const Signin = () => {
 
   const info = (type, text) => {
     message[type](text);
-  };
-
-  const warning = (type, text) => {
-    message[type](text || "Something went wrong");
   };
 
   const navigate = useNavigate();
